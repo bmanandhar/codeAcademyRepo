@@ -1,0 +1,41 @@
+<script>
+    function StudentReport() {
+        this.grade1 = 4;
+        this.grade2 = 2;
+        this.grade3 = 1;
+        this.getGPA = function() {
+            return (this.grade1 + this.grade2 + this.grade3) / 3;
+        };
+    }
+
+    var myStudentReport = new StudentReport();
+
+    for(var x in myStudentReport) {
+        if(typeof myStudentReport[x] !== "function") {
+            console.log("Muahaha! " + myStudentReport[x]);
+        }
+    }
+
+    console.log("Your overall GPA is " + myStudentReport.getGPA());
+</script>
+
+<script>
+    function StudentReport() {
+    grade1 = 4;// removed the this. from lines 2-3
+    grade2 = 2;
+    grade3 = 1;
+    this.getGPA = function()
+    {return (grade1 + grade2 + grade3) / 3;//removed the this.
+    };
+    }
+
+    var myStudentReport = new StudentReport();
+
+    for(var x in myStudentReport) {
+    if(typeof myStudentReport[x] !== "function") {
+    console.log("Muahaha! " + myStudentReport[StudentReport.getGPA]);//changed from [x] to what I have now
+    }
+    }
+
+    console.log("Your overall GPA is " + myStudentReport.getGPA());
+</script>
