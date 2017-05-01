@@ -22,22 +22,21 @@
 
 <script>
     // Private properties
-    function StudentReport() {
-    var grade1 = 4;// removed the this. from lines 2-3
-    var grade2 = 2;
-    var grade3 = 1;
-    this.getGPA = function()
-    {return (grade1 + grade2 + grade3) / 3;//removed the this.
-    };
-    }
+      function StudentReport() {
+          var grade1 = 4;// removed the this. from lines 2-3
+          var grade2 = 2;
+          var grade3 = 1;
+          this.getGPA = function() {
+              return (grade1 + grade2 + grade3) / 3;//removed the this.
+          };
+      }
 
-    var myStudentReport = new StudentReport();
+      var myStudentReport = new StudentReport();
 
-    for(var x in myStudentReport) {
-    if(typeof myStudentReport[x] !== "function") {
-    console.log("Muahaha! " + myStudentReport[StudentReport.getGPA]);//changed from [x] to what I have now
-    }
-    }
-
+      for(var x in myStudentReport) {
+          if(typeof myStudentReport[x] !== "function") {
+              console.log("Muahaha! " + myStudentReport[StudentReport.getGPA]);//changed from [x] to what I have now
+          }
+      }
     console.log("Your overall GPA is " + myStudentReport.getGPA());
 </script>
